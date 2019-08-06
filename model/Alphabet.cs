@@ -16,19 +16,21 @@ namespace AlphabetProgram
                 abc[i] = (char)(i + 'A');
         }
 
-        public char[] getAbc()
+        public char[] Abc
         {
-            return abc;
+            get { return abc; }
         }
 
-        public int[] getCountUpper()
+        public int[] CountUpper
         {
-            return countUpper;
+            get { return countUpper; }
+            set { countUpper = value; }
         }
 
-        public int[] getCountLower()
+        public int[] CountLower
         {
-            return countLower;
+            get { return countLower; }
+            set { countLower = value; }
         }
     }
 }
