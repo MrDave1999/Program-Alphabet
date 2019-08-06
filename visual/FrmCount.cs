@@ -15,17 +15,15 @@ namespace AlphabetProgram
             InitializeComponent();
         }
 
-        public void ShowChars(DetectAbc abc)
+        public void ShowChars(DetectAbc da)
         {
-            int[] countUpper = abc.getAbc().getCountUpper();
-            int[] countLower = abc.getAbc().getCountLower();
-            char[] a = abc.getAbc().getAbc();
+            char[] a = da.Alpha.Abc;
             for (int i = 0; i != 26; ++i)
             {
-                if (countUpper[i] != 0)
-                    txtCount.Text += "-> " + a[i] + " : " + countUpper[i] + "\r\n";
-                if (countLower[i] != 0)
-                    txtCount.Text += "-> " + (char)(a[i] + 32) + " : " + countLower[i] + "\r\n";
+                if (da.Alpha.CountUpper[i] != 0)
+                    txtCount.Text += "-> " + a[i] + " : " + da.Alpha.CountUpper[i] + "\r\n";
+                if (da.Alpha.CountLower[i] != 0)
+                    txtCount.Text += "-> " + (char)(a[i] + 32) + " : " + da.Alpha.CountLower[i] + "\r\n";
             }
         }
     }
