@@ -35,7 +35,7 @@ namespace AlphabetProgram
             }
             pos = BBinary.BBIterative<char>(alpha.Abc, charx);
             if (convertion)
-                ++alpha.CountLower[pos];
+                ++alpha.CountLower[pos]; 
             else
                 ++alpha.CountUpper[pos];
         }
