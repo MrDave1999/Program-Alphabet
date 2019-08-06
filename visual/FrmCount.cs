@@ -17,13 +17,12 @@ namespace AlphabetProgram
 
         public void ShowChars(DetectAbc da)
         {
-            char[] a = da.Alpha.Abc;
             for (int i = 0; i != 26; ++i)
             {
                 if (da.Alpha.CountUpper[i] != 0)
-                    txtCount.Text += "-> " + a[i] + " : " + da.Alpha.CountUpper[i] + "\r\n";
+                    txtCount.Text += "-> " + da.Alpha.Abc[i] + " : " + da.Alpha.CountUpper[i] + "\r\n";
                 if (da.Alpha.CountLower[i] != 0)
-                    txtCount.Text += "-> " + (char)(a[i] + 32) + " : " + da.Alpha.CountLower[i] + "\r\n";
+                    txtCount.Text += "-> " + (char)(da.Alpha.Abc[i] + 32) + " : " + da.Alpha.CountLower[i] + "\r\n";
             }
         }
     }
