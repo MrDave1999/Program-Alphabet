@@ -6,19 +6,16 @@ namespace AlphabetProgram
 {
     public class DetectAbc
     {
-        private Alphabet abc = new Alphabet();
-        private int[] countUpper;
-        private int[] countLower;
+        private Alphabet alpha = new Alphabet();
 
-        public Alphabet getAbc()
+        public Alphabet Alpha
         {
-            return abc;
+            get {return alpha; }
         }
 
+        //Para recorrer la caja box.
         public void RecSentence(string sentence)
         {
-            countUpper = abc.getCountUpper();
-            countLower = abc.getCountLower();
             for (int i = 0, len = sentence.Length; i != len; ++i)
             {
                 if ((sentence[i] >= 'a' && sentence[i] <= 'z') || (sentence[i] >= 'A' && sentence[i] <= 'Z'))
@@ -26,6 +23,7 @@ namespace AlphabetProgram
             }
         }
 
+        //Para detectar si la letra es mayúscula o minúscula.
         public void DetectUpperOrLower(char charx)
         {
             int pos;
@@ -35,21 +33,22 @@ namespace AlphabetProgram
                 convertion = true;
                 charx -= (char)32;
             }
-            pos = BBinary.BBIterative<char>(abc.getAbc(), charx);
+            pos = BBinary.BBIterative<char>(alpha.Abc, charx);
             if (convertion)
-                ++countLower[pos];
+                ++alpha.CountLower[pos];
             else
-                ++countUpper[pos];
+                ++alpha.CountUpper[pos];
         }
 
+        //Para mostrar la cantidad de mayúsculas y minúsculas
         public double ShowCounts(ref int totLower, ref int totUpper)
         {
             for (int i = 0; i != 26; ++i)
             {
-                totUpper += countUpper[i];
-                totLower += countLower[i];
+                totUpper += alpha.CountUpper[i];
+                totLower += alpha.CountLower[i];
             }
-            return (totUpper + totLower) / 2.0;
+            return (totUpper + totLower) / (double)2;
         }
     }
 }
